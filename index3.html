@@ -2,18 +2,32 @@
 <html>
 <head>
    <script>
-		function loadFemale(){
-			var insertText = '<div class="checkbox" style="width:1000px"><label><input type="checkbox">跳马</label><label><input type="checkbox">高低杠</label><label><input type="checkbox">平衡木</label><label><input type="checkbox">自由体操</label><label><input type="checkbox">蹦床</label></div>';
-			document.getElementById("checkbo").innerHTML=insertText;
+    var checkcnt=1;
+		function loadFemale(check){
+			var insertText = '<div class="checkbox" style="width:1000px"><label></label><label><input type="checkbox">跳马</label><label></label><label><input type="checkbox">高低杠</label><label></label><label><input type="checkbox">平衡木</label><label></label><label><input type="checkbox">自由体操</label><label></label><label><input type="checkbox">蹦床</label><label></label></div>';
+			var checktxt='checkbo'+check;
+      document.getElementById(checktxt).innerHTML=insertText;
 		}
-		function loadMale(){
-			var insertText = '<div class="checkbox" style="width:1000px"><label><input type="checkbox">单杠</label><label><input type="checkbox">双杠</label><label><input type="checkbox">吊环</label><label><input type="checkbox">跳马</label><label><input type="checkbox">自由体操</label><label><input type="checkbox">鞍马</label><label><input type="checkbox">蹦床</label></div>';
-			document.getElementById("checkbo").innerHTML=insertText;
+		function loadMale(check){
+			var insertText = '<div class="checkbox" style="width:1000px"><label></label><label><input type="checkbox">单杠</label><label></label><label><input type="checkbox">双杠</label><label></label><label><input type="checkbox">吊环</label><label></label><label><input type="checkbox">跳马</label><label></label><label><input type="checkbox">自由体操</label><label></label><label><input type="checkbox">鞍马</label><label></label><label><input type="checkbox">蹦床</label><label></label></div>';
+			var checktxt='checkbo'+check;
+      document.getElementById(checktxt).innerHTML=insertText;
 		}
 		function insRow()
 		{
-		var insertText = '<hr><div class="row"><div class="col-xs-3" style="width:150px"><label for="exampleInputEmail1">姓名</label><input type="text" class="form-control" placeholder="姓名"></div><div class="col-xs-3" style="width:100px"><label for="exampleInputEmail1">年龄</label><input type="text" class="form-control" placeholder="年龄"></div><div class="col-xs-3" style="width:150px"><label for="exampleInputEmail1">组别</label><select class="form-control"><option value ="7-8岁">7-8岁</option><option value ="9-10岁">9-10岁</option><option value="10-11岁">11-12岁</option></select></div><div class="col-xs-3" style="width:100px"><label for="exampleInputEmail1">文化成绩</label><input type="text" class="form-control" placeholder="不填" disabled="disabled"></div><div class="col-xs-3"><label for="exampleInputEmail1">身份证</label><input  type="text" class="form-control" placeholder="身份证"></div><div class="col-xs-3" style="width:150px"><label for="exampleInputEmail1">性别</label><div class="form-group"><div class="radio"><label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onClick="loadMale()" checked>男</label><label><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onClick="loadFemale()">女</label></div></div></div><div class="col-xs-3"><label for="exampleInputEmail1">比赛项目（多选）</label><div  class="form-group" id="checkbo"><div class="checkbox" style="width:1000px"><label><input type="checkbox">单杠</label><label><input type="checkbox">双杠</label><label><input type="checkbox">吊环</label><label><input type="checkbox">跳马</label><label><input type="checkbox">自由体操</label><label><input type="checkbox">鞍马</label><label><input type="checkbox">蹦床</label></div></div></div></div>';
+    checkcnt+=1;
+		var insertText = '<hr><div class="row"><div class="col-xs-3" style="width:150px"><label for="exampleInputEmail1">姓名</label><input type="text" class="form-control" placeholder="姓名"></div><div class="col-xs-3" style="width:100px"><label for="exampleInputEmail1">年龄</label><input type="text" class="form-control" placeholder="年龄"></div><div class="col-xs-3" style="width:150px"><label for="exampleInputEmail1">组别</label><select class="form-control"><option value ="7-8岁">7-8岁</option><option value ="9-10岁">9-10岁</option><option value="10-11岁">11-12岁</option></select></div><div class="col-xs-3" style="width:100px"><label for="exampleInputEmail1">文化成绩</label><input type="text" class="form-control" placeholder="不填" disabled="disabled"></div><div class="col-xs-3"><label for="exampleInputEmail1">身份证</label><input  type="text" class="form-control" placeholder="身份证"></div><div class="col-xs-3" style="width:150px"><label for="exampleInputEmail1">性别</label><div class="form-group"><div class="radio"><label><input type="radio" name="optionsRadios'+checkcnt+'" id="optionsRadios1" value="option'+checkcnt+'" onClick="loadMale('+checkcnt+')" checked>男</label><label><input type="radio" name="optionsRadios'+checkcnt+'" id="optionsRadios2" value="option'+checkcnt+'" onClick="loadFemale('+checkcnt+')">女</label></div></div></div><div class="col-xs-3"><label for="exampleInputEmail1">比赛项目（多选）</label><div  class="form-group" id="checkbo'+checkcnt+'"><div class="checkbox" style="width:1000px"><label></label><label><input type="checkbox">单杠</label><label></label><label><input type="checkbox">双杠</label><label></label><label><input type="checkbox">吊环</label><label></label><label><input type="checkbox">跳马</label><label></label><label><input type="checkbox">自由体操</label><label></label><label><input type="checkbox">鞍马</label><label></label><label><input type="checkbox">蹦床</label><label></label></div></div></div></div>';
 			document.getElementById("sporter").innerHTML+=insertText;
+		}
+    function insRow3()
+		{
+		var insertText = '<hr><div class="row"><div class="col-xs-3"><label for="exampleInputEmail1">姓名</label><input type="text" class="form-control" placeholder="姓名" name="username"></div><div class="col-xs-4"><label for="exampleInputEmail1">联系方式</label><input type="text" class="form-control" placeholder="联系方式" name="phone"></div><div class="col-xs-5"><label for="exampleInputEmail1">身份证号</label><input type="text" class="form-control" placeholder="身份证号" name="id_card"></div></div></div>';
+			document.getElementById("judge").innerHTML+=insertText;
+		}
+    function insRow2()
+		{
+		var insertText = '<hr><div class="row"><div class="col-xs-3" style="width:100px"><label for="exampleInputEmail1">姓名</label><input type="text" class="form-control" placeholder="姓名" name="username"></div><div class="col-xs-3" style="width:100px"><label for="exampleInputEmail1">性别</label><input type="text" class="form-control" placeholder="性别" name="sex"></div><div class="col-xs-4" style="width:200px"><label for="exampleInputEmail1">联系方式</label><input type="text" class="form-control" placeholder="联系方式" name="phone"></div><div class="col-xs-5"><label for="exampleInputEmail1">身份证号</label><input type="text" class="form-control" placeholder="身份证号" name="id_card"></div></div></div>';
+			document.getElementById("couch").innerHTML+=insertText;
 		}
    </script>
   <meta charset="utf-8">
@@ -447,7 +461,7 @@
 		   <div class="box box-success">
             <div class="box-header with-border">
               <h3 class="box-title">运动员信息</h3>
-			  <input type="button" onClick="insRow()" style="border:0px; border-color:#000000" border="1px""" value="插入一行">
+			  <input type="button" onClick="insRow()" style="border:0ch; margin-left:55px;" value="插入一行">
             </div>
             <div class="box-body"  id="sporter">
               <div class="row">
@@ -481,10 +495,10 @@
 					<div class="form-group">
 					  <div class="radio">
 						<label>
-						  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onClick="loadMale()" checked>男
+						  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onClick="loadMale(1)" checked>男
 						 </label>
 						 <label>
-						  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onClick="loadFemale()">女
+						  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onClick="loadFemale(1)">女
 						</label>
 					  </div>
 					</div>
@@ -492,15 +506,15 @@
 				<div class="col-xs-3">
 				<label for="exampleInputEmail1">比赛项目（多选）</label>
 					<!-- checkbox -->
-					<div  class="form-group" id="checkbo">
-						  <div class="checkbox" style="width:1000px">
-							<label><input type="checkbox">单杠</label>
-							<label><input type="checkbox">双杠</label>
-							<label><input type="checkbox">吊环</label>
-							<label><input type="checkbox">跳马</label>
-							<label><input type="checkbox">自由体操</label>
-							<label><input type="checkbox">鞍马</label>
-							<label><input type="checkbox">蹦床</label>
+					<div  class="form-group" id="checkbo1">
+						  <div class="checkbox" style="width:1000px"><label></label>
+							<label><input type="checkbox">单杠</label><label></label>
+							<label><input type="checkbox">双杠</label><label></label>
+							<label><input type="checkbox">吊环</label><label></label>
+							<label><input type="checkbox">跳马</label><label></label>
+							<label><input type="checkbox">自由体操</label><label></label>
+							<label><input type="checkbox">鞍马</label><label></label>
+							<label><input type="checkbox">蹦床</label><label></label>
 						  </div>
 					</div>
                 </div>
@@ -514,8 +528,9 @@
 	   <div class="box box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">教练员信息</h3>
+              <input type="button" onClick="insRow2()" style="border:0ch; margin-left:55px;" value="插入一行">
             </div>
-            <div class="box-body">
+            <div class="box-body" id="couch">
               <div class="row">
                 <div class="col-xs-3" style="width:100px">
 				<label for="exampleInputEmail1">姓名</label>
@@ -542,8 +557,9 @@
 		   <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">裁判员信息</h3>
+              <input type="button" onClick="insRow3()" style="border:0ch; margin-left:55px;" value="插入一行">
             </div>
-            <div class="box-body">
+            <div class="box-body" id="judge">
               <div class="row">
                 <div class="col-xs-3">
 				<label for="exampleInputEmail1">姓名</label>
@@ -581,7 +597,7 @@
 
                     <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-4">
-                            <button type="submit" class="btn btn-primary" name="filevalidate" value="Validate">提交</button>
+                            <button type="submit" class="btn btn-primary" style="padding-left:20px;padding-right:20px;position:center" name="filevalidate" value="Validate">提交</button>
                         </div>
                     </div>
                 </form>
@@ -856,7 +872,7 @@ $(document).ready(function() {
                         //type: 'application/pdf',
                         minSize: 200*1024,
                         maxSize: 1024*1024,
-                        //message: '文件大小在200K到1M之间！.'
+                        message: '文件大小在200K到1M之间！.'
                     	}
                				 }
            			},
